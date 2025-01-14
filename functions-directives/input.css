@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* setting up default stylings */
+  h1 {
+    /* font-size: 2rem; */
+    @apply text-3xl; /* using existing tailwind classes */
+  }
+
+  h2 {
+    /* font-size: 1.5rem; */
+    @apply text-xl;
+  }
+}
+
+@layer components {
+  .btn-blue {
+    @apply bg-blue-500 py-2 px-4 rounded-xl font-bold text-white hover:bg-blue-700;
+  }
+}
+
+/* can also have classes outside layers */
+.content-area {
+  @apply bg-green-200;
+  height: theme(
+    'spacing.128'
+  ); /* key spacing with value 128 from tailwind.config */
+}
+
+@media screen(xl) {
+  /* using tailwind's native 'xl' class */
+  body {
+    @apply bg-black text-white;
+  }
+}
